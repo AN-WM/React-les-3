@@ -11,15 +11,17 @@ function Navbar({auth, toggleAuth}) {
     }
 
     return (
-        <ul>
-            <NavLink to="/" className="active-link">
+        <ul
+            className="navigatie"
+        >
+            <NavLink to="/" className="navigatie-link">
                 Home
             </NavLink>
 
             {/*Wanneer de gebruiker ingelogd is, zijn Blogposts en de log uit knop zichtbaar*/}
             {auth === true ?
                 <>
-                    <NavLink to="/blogposts" className="active-link">
+                    <NavLink to="/blogposts" className="navigatie-link">
                         Blogposts
                     </NavLink>
 
@@ -33,7 +35,7 @@ function Navbar({auth, toggleAuth}) {
 
                 // Wanneer de gebruiker niet ingelogd is, is alleen de log in link zichtbaar
                 :
-                <NavLink to="/login" className="active-link">
+                <NavLink to="/login" className="navigatie-link">
                     Log in
                 </NavLink>
             }

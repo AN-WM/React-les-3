@@ -23,37 +23,40 @@ function App() {
                     auth={isAuthenticated}
                     toggleAuth={toggleIsAuthenticated}
                 />
-
-                <Routes>
-                    <Route path="/" element={<Homepage/>}/>
-                    <Route
-                        path="/login"
-                        element={
-                            <Loginpage
-                                auth={isAuthenticated}
-                                toggleAuth={toggleIsAuthenticated}
-                            />
-                        }
-                    />
-                    <Route
-                        path="/blogposts"
-                        element={
-                            <PrivateRoute
-                                auth={isAuthenticated}
-                            >
-                                <Blogposts/>
-                            </PrivateRoute>
-                        }/>
-                    <Route
-                        path="/blogposts/:blogId"
-                        element={
-                            <PrivateRoute
-                                auth={isAuthenticated}
-                            >
-                                <Blogpost/>
-                            </PrivateRoute>
-                        }/>
-                </Routes>
+                <div
+                    className="inhoud"
+                >
+                    <Routes>
+                        <Route path="/" element={<Homepage/>}/>
+                        <Route
+                            path="/login"
+                            element={
+                                <Loginpage
+                                    auth={isAuthenticated}
+                                    toggleAuth={toggleIsAuthenticated}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/blogposts"
+                            element={
+                                <PrivateRoute
+                                    auth={isAuthenticated}
+                                >
+                                    <Blogposts/>
+                                </PrivateRoute>
+                            }/>
+                        <Route
+                            path="/blogposts/:blogId"
+                            element={
+                                <PrivateRoute
+                                    auth={isAuthenticated}
+                                >
+                                    <Blogpost/>
+                                </PrivateRoute>
+                            }/>
+                    </Routes>
+                </div>
             </Router>
         </>
     );

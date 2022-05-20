@@ -1,6 +1,6 @@
 import React from "react";
 import '../App.css'
-import {useParams} from "react-router-dom";
+import {useParams, Link} from "react-router-dom";
 import posts from '../data/posts.json';
 
 function Blogpost() {
@@ -16,6 +16,7 @@ function Blogpost() {
             <h1>{title}</h1>
             <h2>{date}</h2>
             <p>{content}</p>
+            <Link to="/">Keer terug naar de homepagina</Link>
         </>
     )
 }
